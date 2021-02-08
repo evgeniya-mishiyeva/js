@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>* {
+            box-sizing: border-box;
+        }
+
+        form {
+            background-color: #24303C;
+            width: 30%;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        fieldset {
+            padding: 0;
+            border: none;
+        }
+
+        .topButton {
+            font-size: 22px;
+            margin: 0;
+            width: 50%;
+            border: 0;
+            background-color: #1AB188;
+            color: #E8FEF1;
+        }
+
+        .topButton:last-child {
+            background-color: #435259;
+            color: #94A9AE;
+        }
+
+        .header {
+            display: flex;
+            height: 60px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .main h1 {
+            text-align: center;
+            color: #E8FEF1;
+        }
+
+        .main input[type="text"] {
+            border: solid 1px #94A9AE;
+            color: #94A9AE;
+            height: 35px;
+            background-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .nameInput {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nameInputItem {
+            width: 45%;
+        }
+
+        .nameError {
+            width: 45%;
+        }
+
+        input[type="password"] {
+            border: solid 1px #94A9AE;
+            color: #94A9AE;
+            height: 35px;
+            background-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .bottomButton {
+            width: 100%;
+            border: 0;
+            background-color: #1AB188;
+            color: #E8FEF1;
+        }
+
+        .error {
+            color: red;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="validationForm">
+        <fieldset>
+            <div class="header">
+                <button class="topButton">Sign Up</button>
+                <button class="topButton">Log In</button>
+            </div>
+            <div class="main">
+                <h1>Sign Up for Free</h1>
+
+                <div class="nameInput">
+                    <div class="error fNameError">Name is wrong</div>
+                    <div class="error nameError">Name is wrong</div>
+                    <input type="text" id="fName" class="nameInputItem" name="firstName" placeholder="First Name *"
+                        value="haha">
+                    <input type="text" class="nameInputItem" name="lastName" placeholder="Last Name *">
+                </div>
+                <div class="error emailError">Email is wrong</div>
+                <input type="text" placeholder="Email Address *">
+                <div class="error passwordError">Password is wrong</div>
+                <input type="password" placeholder="Set A Password *">
+            </div>
+            <button class="bottomButton" onclick="checkInput()">
+                <h1>GET STARTED</h1>
+            </button>
+        </fieldset>
+    </form>
+
+    <script>
+        let form = document.querySelector('.validationForm');
+        let userName = document.querySelectorAll(".nameInput > *");
+        let firstName = document.getElementById("fName");
+        let nameError = document.getElementsByClassName("fNameError");
+
+
+
+        function checkInput() {
+            if (firstName.value === "haha")
+            nameError.style.visibility = "hidden";
+debugger;
+        }
+
+
+
+
+        
+    </script>
+
+</body>
+
+</html>
